@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-
 public interface PostRepository extends JpaRepository<Post, Long> {
     @RestResource(rel="contains-title", path="containsTitle")
     List<Post> findByTitleContaining(String title);
+
+    List<Post> findByAuthor_Lastname(String lastname);
 }
